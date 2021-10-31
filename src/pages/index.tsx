@@ -1,3 +1,4 @@
+import Layout from "../components/Layout";
 
 export default function Home() {
   return (
@@ -7,7 +8,9 @@ export default function Home() {
     bg-gradient-to-r from-blue-500 to-purple-500
     `
     }>
-      <span>kjkjkj</span>
+    <Layout titulo="Cadastro Simples">
+      <span>Conteudo</span>
+    </Layout>
       
     </div>
   )
