@@ -1,3 +1,4 @@
+import Botao from "../components/Botao";
 import Layout from "../components/Layout";
 import Tabela1 from "../components/Tabela1";
 import Device from "../core/Device";
@@ -22,6 +23,10 @@ export default function Home() {
     `
     }>
     <Layout titulo="Cadastro Simples">
+      <div className = "flex justify-end">
+      <Botao cor = "green" >New Device</Botao>
+      </div>
+      
       <Tabela1 devices={devices} deviceDelete={deviceDelete} ></Tabela1>
     </Layout>
       
