@@ -9,6 +9,11 @@ export default function Home() {
     new Device('phone', 'blue', 123456, 2),
     new Device('tablet', 'blue', 1234567, 3),
   ]
+
+  function deviceDelete(device: Device){
+    console.log(device.id);
+  }
+
   return (
     <div className={
     `
@@ -17,7 +22,7 @@ export default function Home() {
     `
     }>
     <Layout titulo="Cadastro Simples">
-      <Tabela1 devices={devices}></Tabela1>
+      <Tabela1 devices={devices} deviceDelete={deviceDelete} ></Tabela1>
     </Layout>
       
     </div>
