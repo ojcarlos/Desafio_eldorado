@@ -1,8 +1,9 @@
 export default class Device{
-    #id: number;
+    
     #category:string;
     #color:string;
     #partNumber:number;
+    #id: number;
 
     constructor (category:string, color:string, partNumber:number, id: number = null){
         this.#id = id;

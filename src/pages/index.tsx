@@ -1,6 +1,14 @@
 import Layout from "../components/Layout";
+import Tabela1 from "../components/Tabela1";
+import Device from "../core/Device";
 
 export default function Home() {
+
+  const devices = [
+    new Device('pc', 'blue', 12345, 1),
+    new Device('phone', 'blue', 123456, 2),
+    new Device('tablet', 'blue', 1234567, 3),
+  ]
   return (
     <div className={
     `
@@ -9,7 +17,7 @@ export default function Home() {
     `
     }>
     <Layout titulo="Cadastro Simples">
-      <span>Conteudo</span>
+      <Tabela1 devices={devices}></Tabela1>
     </Layout>
       
     </div>
