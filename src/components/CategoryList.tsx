@@ -19,10 +19,11 @@ export default function CategoryList(props: CategoryListProps){
                         border border-purple-500 rounded-lg
                         focus:outline-none
                     `}>
-                    <option value="laranja">Phone</option>
-                    <option value="limao">PC</option>
-                    <option value="coco">Notebook</option>
-                    <option value="manga">Motorola</option>
+                    <option value=""></option>
+                    <option value="Phone">Phone</option>
+                    <option value="Pc">PC</option>
+                    <option value="Notebook">Notebook</option>
+                    <option value="Motorola">Motorola</option>
                 </select>
         </div>
     )

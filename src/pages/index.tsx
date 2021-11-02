@@ -14,8 +14,13 @@ export default function Home() {
   ]
 
   function deviceDelete(device: Device){
-    console.log(device.id);
+    console.log(`excluir ... ${device.color}`);
   }
+
+  function deviceSave(device: Device){
+    console.log(device);
+  }
+
   const[visivel, setVisivel] = useState<'tabela1' |'form1'>('tabela1')
   return (
     <div className={
@@ -37,6 +42,7 @@ export default function Home() {
 
           <FormularioDevice device={devices[0]}
           cancel = {() => setVisivel('tabela1') }
+          newDevice = {deviceSave}
           />
 
         )}
