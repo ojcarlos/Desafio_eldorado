@@ -8,10 +8,10 @@ function MyApp({ Component, pageProps }) {
   <header className ={`bg-gray-50 
     fixed top-0 w-full
     flex `} >
-    <Link href = "index">
+    <Link href = "/">
       <a className="text-2xl p-4 rounded-2xl hover:bg-gray-100" >Device </a>
     </Link>
-    <Link href = "index">
+    <Link href = "category">
       <a className="text-2xl p-4 rounded-2xl hover:bg-gray-100" >Category </a>
     </Link>
    

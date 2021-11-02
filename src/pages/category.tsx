@@ -1,25 +1,25 @@
 import { useState } from "react";
 import Botao from "../components/Botao";
-import FormularioDevice from "../components/FormularioDevice";
+import FormularioCategory from "../components/FormularioCategory";
 import Layout from "../components/Layout";
-import Tabela1 from "../components/Tabela1";
-import Device from "../core/Device";
+import Tabela2 from "../components/Tabela2";
+import Category from "../core/Category";
 
 export default function categoria() {
-  const[device, setDevice] = useState<Device>(Device.vazio)
+  const[category, setCategory] = useState<Category>(Category.vazio)
   const[visivel, setVisivel] = useState<'tabela1' |'form1'>('tabela1')
-  const devices = [
-    new Device('pc', 'blue', 12345, 1),
-    new Device('phone', 'blue', 123456, 2),
-    new Device('tablet', 'blue', 1234567, 3),
+  const categorys = [
+    new Category('pc'),
+    new Category('phone'),
+    new Category('tablet'),
   ]
 
-  function deviceDelete(device: Device){
-    console.log(`excluir ... ${device.color}`);
+  function categoryDelete(category: Category){
+    console.log(`excluir ... ${category}`);
   }
 
-  function deviceSave(device: Device){
-    console.log(device);
+  function categorySave(category: Category){
+    console.log(category);
   }
 
   
@@ -30,20 +30,20 @@ export default function categoria() {
     bg-gradient-to-r from-blue-500 to-purple-500
     `
     }>
-      <Layout titulo="Device">
+      <Layout titulo="Category">
         {visivel === 'tabela1' ? (
           <> 
               <div className = "flex justify-end">
-                  <Botao cor = "green" onClick ={() => setVisivel('form1')}  >New Device</Botao>
+                  <Botao cor = "green" onClick ={() => setVisivel('form1')}  >New Category</Botao>
               </div>
-              <Tabela1 devices={devices} deviceDelete={deviceDelete}/>
+              <Tabela2 categorys={categorys} categoryDelete={categoryDelete}/>
           </>
   
         ) : (
 
-          <FormularioDevice device={device}
+          <FormularioCategory category={category}
           cancel = {() => setVisivel('tabela1') }
-          newDevice = {deviceSave}
+          newCategory= {categorySave}
           />
 
         )}

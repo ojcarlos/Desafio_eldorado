@@ -1,4 +1,4 @@
-export default class Device{
+export default class Category{
     
     #name: string;
     #id: number;
@@ -8,7 +8,7 @@ export default class Device{
         this.#name = name;
     }
     static vazio(){
-        return new Device('')
+        return new Category('')
     }
     get id() { return this.#id; }
     get name() { return this.#name; }
