@@ -1,4 +1,6 @@
+import { useState } from "react";
 import Botao from "../components/Botao";
+import FormularioDevice from "../components/FormularioDevice";
 import Layout from "../components/Layout";
 import Tabela1 from "../components/Tabela1";
 import Device from "../core/Device";
@@ -14,7 +16,7 @@ export default function Home() {
   function deviceDelete(device: Device){
     console.log(device.id);
   }
-
+  const[visivel, setVisivel] = useState<'tabela1' |'form1'>('tabela1')
   return (
     <div className={
     `
@@ -22,13 +24,28 @@ export default function Home() {
     bg-gradient-to-r from-blue-500 to-purple-500
     `
     }>
-    <Layout titulo="Cadastro Simples">
-      <div className = "flex justify-end">
-      <Botao cor = "green" >New Device</Botao>
-      </div>
+      <Layout titulo="Device">
+        {visivel === 'tabela1' ? (
+          <> 
+              <div className = "flex justify-end">
+                  <Botao cor = "green" onClick ={() => setVisivel('form1')}  >New Device</Botao>
+              </div>
+              <Tabela1 devices={devices} deviceDelete={deviceDelete}/>
+          </>
+  
+        ) : (
+
+          <FormularioDevice device={devices[0]}
+          cancel = {() => setVisivel('tabela1') }
+          />
+
+        )}
+        
+          
       
-      <Tabela1 devices={devices} deviceDelete={deviceDelete} ></Tabela1>
+      
     </Layout>
+    
       
     </div>
   )
