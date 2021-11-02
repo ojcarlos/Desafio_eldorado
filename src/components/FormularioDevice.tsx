@@ -33,7 +33,7 @@ export default function FormularioDevice(props: FormularioDeviceProps){
             />
             <div>
                 <Botao cor="blue"
-                    onClick={() => props.newDevice(new Device(category, color, partNumber,id)) }
+                    onClick={() => props.newDevice(new Device(category, color, +partNumber,id)) }
                 >New</Botao>
                 <Botao cor="gray" onClick = {props.cancel} >Cancel</Botao>
 

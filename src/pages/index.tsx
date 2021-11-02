@@ -6,7 +6,8 @@ import Tabela1 from "../components/Tabela1";
 import Device from "../core/Device";
 
 export default function Home() {
-
+  const[device, setDevice] = useState<Device>(Device.vazio)
+  const[visivel, setVisivel] = useState<'tabela1' |'form1'>('tabela1')
   const devices = [
     new Device('pc', 'blue', 12345, 1),
     new Device('phone', 'blue', 123456, 2),
@@ -21,7 +22,7 @@ export default function Home() {
     console.log(device);
   }
 
-  const[visivel, setVisivel] = useState<'tabela1' |'form1'>('tabela1')
+  
   return (
     <div className={
     `
@@ -40,7 +41,7 @@ export default function Home() {
   
         ) : (
 
-          <FormularioDevice device={devices[0]}
+          <FormularioDevice device={device}
           cancel = {() => setVisivel('tabela1') }
           newDevice = {deviceSave}
           />
